@@ -24,7 +24,7 @@ namespace sekolahku_jude.Forms
 
         private void ListDataGuru()
         {
-            var listGuru = _guruDal.ListData().ToList();
+            var listGuru = _guruDal.ListData()?.ToList();
             var binding = new BindingSource();
             binding.DataSource = listGuru;
             dataGridView1.DataSource = binding;
@@ -57,7 +57,43 @@ namespace sekolahku_jude.Forms
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            if (textBox1.Text == string.Empty)
+            {
+                MessageBox.Show("ID Guru tidak boleh kosong");
+                return;
+            }
 
+            if (textBox2.Text == string.Empty)
+            {
+                MessageBox.Show("Nama Guru tidak boleh kosong");
+                return;
+            }
+
+            if (textBox1.Text.Length > 3)
+            {
+                MessageBox.Show("ID Guru maximal 3 digit");
+                return;
+            }
+            if (textBox2.Text.Length > 30)
+            {
+                MessageBox.Show("Nama Guru maximal 30 huruf");
+                return;
+            }
+
+
+            var guru = new GuruModel
+            {
+                GuruId = textBox1.Text,
+                GuruName = textBox2.Text
+            };
+            var guruDb = _guruDal.GetData(guru.GuruId);
+            if (guruDb is null)
+                _guruDal.Insert(guru);
+            else
+                _guruDal.Update(guru);
+
+            ClearForm();
+            ListDataGuru();
         }
 
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -75,7 +111,18 @@ namespace sekolahku_jude.Forms
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.CurrentRow is null)
+                return;
+            var guruId = dataGridView1.CurrentRow.Cells["GuruId"].Value.ToString();
+            var guru = _guruDal.GetData(guruId);
+            if (guru is null)
+                return;
 
+            if (MessageBox.Show($"Hapus data {guru.GuruName}?", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                _guruDal.Delete(guru.GuruId);
+
+            ClearForm();
+            ListDataGuru();
         }
     }
 }
