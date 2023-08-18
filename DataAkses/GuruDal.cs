@@ -1,37 +1,39 @@
-﻿using System;
+﻿using Dapper;
+using Nuna.Lib.DataAccessHelper;
+using sekolahku_jude.Model;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Configuration;
-using sekolahku_jude.Model;
-using Nuna.Lib.DataAccessHelper;
-using Dapper;
 
 namespace sekolahku_jude.DataAkses
 {
     public class GuruDal
     {
-        private string _connect;
-       public GuruDal(){
-            _connect = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+        private string _connString;
+        public GuruDal()
+        {
+            _connString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         }
 
         public void Insert(GuruModel model)
         {
             //  QUERY
             const string sql = @"
-                INSERT INTO tb_guru
+                INSERT INTO Guru(GuruId, GuruName)
                 VALUES (@GuruId, @GuruName)";
 
             //  PARAM
             var dp = new DynamicParameters();
-            dp.AddParam("@GuruId", model.guru_id, System.Data.SqlDbType.VarChar);
-            dp.AddParam("@GuruName", model.guru_name, System.Data.SqlDbType.VarChar);
+            dp.AddParam("@GuruId", model.GuruId, System.Data.SqlDbType.VarChar);
+            dp.AddParam("@GuruName", model.GuruName, System.Data.SqlDbType.VarChar);
 
             //  EXECUTE
-            using (var conn = new SqlConnection(_connect))
+            using (var conn = new SqlConnection(_connString))
             {
                 conn.Execute(sql, dp);
             }
@@ -50,11 +52,11 @@ namespace sekolahku_jude.DataAkses
 
             //  PARAM
             var dp = new DynamicParameters();
-            dp.AddParam("@GuruId", model.guru_id, System.Data.SqlDbType.VarChar);
-            dp.AddParam("@GuruName", model.guru_name, System.Data.SqlDbType.VarChar);
+            dp.AddParam("@GuruId", model.GuruId, System.Data.SqlDbType.VarChar);
+            dp.AddParam("@GuruName", model.GuruName, System.Data.SqlDbType.VarChar);
 
             //  EXECUTE
-            using (var conn = new SqlConnection(_connect))
+            using (var conn = new SqlConnection(_connString))
             {
                 conn.Execute(sql, dp);
             }
@@ -73,7 +75,7 @@ namespace sekolahku_jude.DataAkses
             dp.AddParam("@GuruId", guruId, System.Data.SqlDbType.VarChar);
 
             //  EXECUTE
-            using (var conn = new SqlConnection(_connect))
+            using (var conn = new SqlConnection(_connString))
             {
                 conn.Execute(sql, dp);
             }
@@ -82,16 +84,16 @@ namespace sekolahku_jude.DataAkses
         {
             //  QUERY
             const string sql = @"
-                SELECT  guru_nama AS guru_name, guru_id As guru_id
-                FROM    tb_guru
-                WHERE   guru_id= @GuruId ";
+                SELECT  GuruId, GuruName
+                FROM    Guru
+                WHERE   GuruId = @GuruId ";
 
             //  PARAM
             var dp = new DynamicParameters();
             dp.AddParam("@GuruId", guruId, System.Data.SqlDbType.VarChar);
 
             //  EXECUTE
-            using (var conn = new SqlConnection(_connect))
+            using (var conn = new SqlConnection(_connString))
             {
                 return conn.ReadSingle<GuruModel>(sql, dp);
             }
@@ -105,7 +107,7 @@ namespace sekolahku_jude.DataAkses
                 FROM    Guru ";
 
             //  EXECUTE
-            using (var conn = new SqlConnection(_connect))
+            using (var conn = new SqlConnection(_connString))
             {
                 return conn.Read<GuruModel>(sql);
             }

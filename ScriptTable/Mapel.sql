@@ -1,6 +1,6 @@
-﻿CREATE TABLE MAPEL(
-MapelId varchar(3) not null default (''),
-MapelName varchar (30) not null default (''),
+﻿CREATE TABLE Mapel(
+	MapelId VARCHAR(3) NOT NULL DEFAULT(''),
+	MapelName VARCHAR(30) NOT NULL DEFAULT(''),
 
-constraint PK_Mapel primary key clustered(MapelId)
+	CONSTRAINT PK_Mapel PRIMARY KEY CLUSTERED(MapelId)
 )

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using sekolahku_jude.DataAkses;
+using sekolahku_jude.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,36 +9,72 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using sekolahku_jude.Model;
-using sekolahku_jude.DataAkses;
 
 namespace sekolahku_jude.Forms
 {
     public partial class GuruForm : Form
     {
-        private GuruDal dal;
+        private GuruDal _guruDal;
         public GuruForm()
         {
-            dal = new GuruDal();
             InitializeComponent();
+            _guruDal = new GuruDal();
+            ListDataGuru();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ListDataGuru()
         {
-            if (tb_guruId.Text==""||tb_guru_name.Text=="")
-            {
-                MessageBox.Show("Form belum lengkap");
+            var listGuru = _guruDal.ListData().ToList();
+            var binding = new BindingSource();
+            binding.DataSource = listGuru;
+            dataGridView1.DataSource = binding;
+        }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            //var grid = (DataGridView)sender;
+            //if (grid.CurrentRow is null)
+            //    return;
+            //var guruId = grid.CurrentRow.Cells["GuruId"].Value.ToString();
+            //var guru = _guruDal.GetData(guruId);
+            //if (guru is null)
+            //    return;
+            //textBox1.Text = guru.GuruId;
+            //textBox2.Text = guru.GuruName;
+
+        }
+
+        private void NewButton_Click(object sender, EventArgs e)
+        {
+            ClearForm();
+        }
+
+        private void ClearForm()
+        {
+            textBox1.Text = string.Empty;
+            textBox2.Text = string.Empty;
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            var grid = (DataGridView)sender;
+            if (grid.CurrentRow is null)
                 return;
-            }
+            var guruId = grid.CurrentRow.Cells["GuruId"].Value.ToString();
+            var guru = _guruDal.GetData(guruId);
+            if (guru is null)
+                return;
+            textBox1.Text = guru.GuruId;
+            textBox2.Text = guru.GuruName;
+        }
 
-            var guru = new GuruModel() {
-                guru_id = tb_guruId.Text,
-                guru_name=tb_guru_name.Text                
-            };
-
-          
-                dal.Insert(guru);
-                MessageBox.Show("Berhasil Input data");
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
 
         }
     }

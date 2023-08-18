@@ -8,7 +8,7 @@ namespace sekolahku_jude.Model
 {
    public class GuruModel
     {
-        public string guru_id { get; set; }
-        public string guru_name { get; set; }
+        public string GuruId { get; set; }
+        public string GuruName { get; set; }
     }
 }

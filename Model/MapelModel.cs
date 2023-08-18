@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sekolahku_jude.Model
+namespace sekolahku_jude.Models
 {
     public class MapelModel
     {

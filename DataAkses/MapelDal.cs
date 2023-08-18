@@ -1,13 +1,10 @@
 ﻿using Dapper;
 using Nuna.Lib.DataAccessHelper;
 using sekolahku_jude.Model;
-using System;
+using sekolahku_jude.Models;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace sekolahku_jude.DataAkses
 {
@@ -22,15 +19,13 @@ namespace sekolahku_jude.DataAkses
 
         public void Insert(MapelModel model)
         {
-
             const string sql = @"
-                INSERT INTO Mapel (MapelId,MapelName)
+                INSERT INTO Mapel (MapelId, MapelName)
                 VALUES (@MapelId, @MapelName)";
 
             var dp = new DynamicParameters();
             dp.AddParam("@MapelId", model.MapelId, System.Data.SqlDbType.VarChar);
             dp.AddParam("@MapelName", model.MapelName, System.Data.SqlDbType.VarChar);
-
 
             using (var conn = new SqlConnection(_connString))
             {
@@ -49,49 +44,49 @@ namespace sekolahku_jude.DataAkses
             dp.AddParam("@MapelId", model.MapelId, System.Data.SqlDbType.VarChar);
             dp.AddParam("@MapelName", model.MapelName, System.Data.SqlDbType.VarChar);
 
-
             using (var conn = new SqlConnection(_connString))
             {
                 conn.Execute(sql, dp);
             }
         }
 
-
-        public void Delete(string MapelId)
+        public void Delete(string mapelId)
         {
             const string sql = @"
                 DELETE FROM Mapel 
                 WHERE MapelId = @MapelId";
 
             var dp = new DynamicParameters();
-            dp.AddParam("@MapelId", MapelId, System.Data.SqlDbType.VarChar);
+            dp.AddParam("@MapelId", mapelId, System.Data.SqlDbType.VarChar);
+
             using (var conn = new SqlConnection(_connString))
             {
                 conn.Execute(sql, dp);
             }
         }
-        public MapelModel GetData(string MapelId)
+
+        public MapelModel GetData(string mapelId)
         {
             const string sql = @"
-                SELECT MapelId,MapelName
+                SELECT MapelId, MapelName
                 FROM Mapel 
-               WHERE MapelId = @MapelId";
+                WHERE MapelId = @MapelId";
 
             var dp = new DynamicParameters();
-            dp.AddParam("@MapelId", MapelId, System.Data.SqlDbType.VarChar);
-
+            dp.AddParam("@MapelId", mapelId, System.Data.SqlDbType.VarChar);
 
             using (var conn = new SqlConnection(_connString))
             {
                 return conn.ReadSingle<MapelModel>(sql, dp);
             }
-
         }
+
         public IEnumerable<MapelModel> ListData()
         {
             const string sql = @"
-                SELECT MapelId,MapelName
-                FROM Mapel";
+                SELECT MapelId, MapelName
+                FROM Mapel ";
+
             using (var conn = new SqlConnection(_connString))
             {
                 return conn.Read<MapelModel>(sql);
