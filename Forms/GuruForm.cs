@@ -81,7 +81,7 @@ namespace sekolahku_jude.Forms
             }
 
 
-            var guru = new GuruModel
+            var guru = new Siswamodel
             {
                 GuruId = textBox1.Text,
                 GuruName = textBox2.Text

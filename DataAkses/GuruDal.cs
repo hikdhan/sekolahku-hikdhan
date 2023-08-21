@@ -20,7 +20,7 @@ namespace sekolahku_jude.DataAkses
             _connString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         }
 
-        public void Insert(GuruModel model)
+        public void Insert(Siswamodel model)
         {
             //  QUERY
             const string sql = @"
@@ -39,7 +39,7 @@ namespace sekolahku_jude.DataAkses
             }
         }
 
-        public void Update(GuruModel model)
+        public void Update(Siswamodel model)
         {
             //  QUERY
             const string sql = @"
@@ -80,7 +80,7 @@ namespace sekolahku_jude.DataAkses
                 conn.Execute(sql, dp);
             }
         }
-        public GuruModel GetData(string guruId)
+        public Siswamodel GetData(string guruId)
         {
             //  QUERY
             const string sql = @"
@@ -95,11 +95,11 @@ namespace sekolahku_jude.DataAkses
             //  EXECUTE
             using (var conn = new SqlConnection(_connString))
             {
-                return conn.ReadSingle<GuruModel>(sql, dp);
+                return conn.ReadSingle<Siswamodel>(sql, dp);
             }
         }
 
-        public IEnumerable<GuruModel> ListData()
+        public IEnumerable<Siswamodel> ListData()
         {
             //  QUERY
             const string sql = @"
@@ -109,7 +109,7 @@ namespace sekolahku_jude.DataAkses
             //  EXECUTE
             using (var conn = new SqlConnection(_connString))
             {
-                return conn.Read<GuruModel>(sql);
+                return conn.Read<Siswamodel>(sql);
             }
         }
     }

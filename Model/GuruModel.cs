@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace sekolahku_jude.Model
 {
-   public class GuruModel
+   public class Siswamodel
     {
         public string GuruId { get; set; }
         public string GuruName { get; set; }

@@ -93,8 +93,8 @@ namespace sekolahku_jude.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var listGuru = _guruDal.ListData()?.ToList() ?? new List<GuruModel>();
-            var browser = new BrowseData<GuruModel>(listGuru);
+            var listGuru = _guruDal.ListData()?.ToList() ?? new List<Siswamodel>();
+            var browser = new BrowseData<Siswamodel>(listGuru);
             var resultDialog = browser.ShowDialog();
             if (resultDialog == DialogResult.OK)
             {
