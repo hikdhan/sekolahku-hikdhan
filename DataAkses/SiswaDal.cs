@@ -25,7 +25,7 @@ namespace sekolahku_jude.DataAkses
             //  QUERY
             const string sql = @"
                 INSERT INTO Siswa(SiswaId, SiswaName, TglLahir, Alamat, Alamat2, Kota)
-                VALUES (@SiswaId, @SiswaName, TglLahir, Alamat, Alamat2, Kota)";
+                VALUES (@SiswaId, @SiswaName, @TglLahir, @Alamat, @Alamat2, @Kota)";
             //PARAM 
             var dp = new DynamicParameters();
             dp.AddParam("@SiswaId", model.SiswaId,System.Data.SqlDbType.VarChar);
@@ -48,11 +48,11 @@ namespace sekolahku_jude.DataAkses
                 UPDATE
                     Siswa
                 SET
-                    SiswaName = @SiswaName
-                    TglLahir = @TglLahir
-                    Alamat = @ Alamat
-                    Alamat2 = @ Alamat2
-                    Kota = Kota
+                    SiswaName = @SiswaName,
+                    TglLahir = @TglLahir,
+                    Alamat = @Alamat,
+                    Alamat2 = @Alamat2,
+                    Kota = @Kota
                 WHERE
                     SiswaId = @SiswaId ";
             //PARAM 
