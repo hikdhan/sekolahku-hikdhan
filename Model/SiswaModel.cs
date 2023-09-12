@@ -14,5 +14,6 @@ namespace sekolahku_jude.Model
         public string Alamat { get; set; }
         public string Alamat2 { get; set; }
         public string Kota { get; set; }
+        public string Photo { get; set; }
     }
 }

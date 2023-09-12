@@ -21,6 +21,17 @@ namespace sekolahku_jude.Forms
             _siswaDal = new SiswaDal();
 
             RefreshGrid();
+            PhotoPic.DoubleClick += PhotoPic_DoubleClick;
+        }
+
+        private void PhotoPic_DoubleClick(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "JPEG Files (*.jpg)|*.jpg|All Files (*.*)|*.*"; ;
+            var filename = openFileDialog1.ShowDialog();
+          
+            PhotoPic.SizeMode = PictureBoxSizeMode.StretchImage;
+            PhotoPic.Load(openFileDialog1.FileName);
+            label7.Text = openFileDialog1.FileName;
         }
 
         private void RefreshGrid()
@@ -87,6 +98,7 @@ namespace sekolahku_jude.Forms
             Siswa.Alamat = textBox4.Text;
             Siswa.Alamat2 = textBox5.Text;
             Siswa.Kota = textBox6.Text;
+            Siswa.Photo = label7.Text;
 
             var db = _siswaDal.GetData(textBox1.Text);
             if (db is null)
@@ -104,6 +116,7 @@ namespace sekolahku_jude.Forms
             textBox4.Text = string.Empty;
             textBox5.Text = string.Empty;
             textBox6.Text = string.Empty;
+            PhotoPic.Image = null;
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -115,6 +128,24 @@ namespace sekolahku_jude.Forms
             if (siswa is null)
                 return;
             showdata(siswa);
+
+            label7.Text = siswa.Photo;
+            PhotoPic.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (label7.Text != "")
+            {
+                try
+                {
+                    PhotoPic.Load(label7.Text);
+                }
+                catch (Exception)
+                {
+
+                    PhotoPic.Image = null;
+                }
+             
+            }
+            else
+                PhotoPic.Image = null;
         }
         
         private void showdata(SiswaModel siswa)
@@ -127,6 +158,7 @@ namespace sekolahku_jude.Forms
             textBox4.Text = siswa.Alamat;
             textBox5.Text = siswa.Alamat2;
             textBox6.Text = siswa.Kota;
+            label7.Text = siswa.Photo;
         }
 
         private void button3_Click(object sender, EventArgs e)
