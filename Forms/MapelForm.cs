@@ -98,5 +98,10 @@ namespace sekolahku_jude.Forms
             textBox1.Text = mapel.MapelId;
             textBox2.Text = mapel.MapelName;
         }
+
+        private void MapelForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
