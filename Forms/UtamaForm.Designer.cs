@@ -37,6 +37,7 @@
             this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
+            this.ribbonButton5 = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -73,6 +74,7 @@
             this.ribbonPanel1.Items.Add(this.ribbonButton1);
             this.ribbonPanel1.Items.Add(this.ribbonButton2);
             this.ribbonPanel1.Items.Add(this.ribbonButton4);
+            this.ribbonPanel1.Items.Add(this.ribbonButton5);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Text = "Master";
             // 
@@ -117,6 +119,13 @@
             this.ribbonTab2.Name = "ribbonTab2";
             this.ribbonTab2.Text = null;
             // 
+            // ribbonButton5
+            // 
+            this.ribbonButton5.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.Image")));
+            this.ribbonButton5.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.LargeImage")));
+            this.ribbonButton5.Name = "ribbonButton5";
+            this.ribbonButton5.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.SmallImage")));
+            // 
             // UtamaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -144,6 +153,7 @@
         private System.Windows.Forms.RibbonButton ribbonButton3;
         
         private System.Windows.Forms.RibbonButton ribbonButton4;
+        private System.Windows.Forms.RibbonButton ribbonButton5;
     }
 }
 

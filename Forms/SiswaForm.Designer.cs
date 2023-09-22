@@ -57,7 +57,7 @@ namespace sekolahku_jude.Forms
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(960, 629);
+            this.button3.Location = new System.Drawing.Point(1123, 629);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(112, 35);
@@ -69,7 +69,7 @@ namespace sekolahku_jude.Forms
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(838, 629);
+            this.button2.Location = new System.Drawing.Point(1001, 629);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 35);
@@ -81,7 +81,7 @@ namespace sekolahku_jude.Forms
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(725, 629);
+            this.button1.Location = new System.Drawing.Point(888, 629);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 35);
@@ -109,7 +109,7 @@ namespace sekolahku_jude.Forms
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(725, 14);
+            this.panel1.Location = new System.Drawing.Point(888, 14);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(355, 614);
@@ -129,9 +129,9 @@ namespace sekolahku_jude.Forms
             // 
             this.PhotoPic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PhotoPic.BackColor = System.Drawing.Color.DimGray;
-            this.PhotoPic.Location = new System.Drawing.Point(23, 323);
+            this.PhotoPic.Location = new System.Drawing.Point(23, 361);
             this.PhotoPic.Name = "PhotoPic";
-            this.PhotoPic.Size = new System.Drawing.Size(313, 252);
+            this.PhotoPic.Size = new System.Drawing.Size(313, 214);
             this.PhotoPic.TabIndex = 13;
             this.PhotoPic.TabStop = false;
             // 
@@ -267,7 +267,7 @@ namespace sekolahku_jude.Forms
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(704, 641);
+            this.dataGridView1.Size = new System.Drawing.Size(867, 641);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -281,7 +281,7 @@ namespace sekolahku_jude.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Red;
-            this.ClientSize = new System.Drawing.Size(1088, 669);
+            this.ClientSize = new System.Drawing.Size(1251, 669);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
