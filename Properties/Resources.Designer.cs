@@ -119,5 +119,25 @@ namespace sekolahku_jude.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jadwal_waifu2x_photo_noise3_scale_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("jadwal_waifu2x_photo_noise3_scale-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jadwal_waifu2x_photo_noise3_scale_removebg_preview1 {
+            get {
+                object obj = ResourceManager.GetObject("jadwal_waifu2x_photo_noise3_scale-removebg-preview1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

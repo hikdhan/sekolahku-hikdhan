@@ -24,8 +24,8 @@ namespace sekolahku_jude.DataAkses
 
             var dp = new DynamicParameters();
             dp.AddParam("@KelasId", model.KelasId, System.Data.SqlDbType.VarChar);
-            dp.AddParam("@Hari", model.KelasId, System.Data.SqlDbType.VarChar);
-            dp.AddParam("@JamMulai", model.KelasId, System.Data.SqlDbType.VarChar);
+            dp.AddParam("@Hari", model.Hari, System.Data.SqlDbType.VarChar);
+            dp.AddParam("@JamMulai", model.JamMulai, System.Data.SqlDbType.VarChar);
             dp.AddParam("@JamSelesai", model.JamSelesai, System.Data.SqlDbType.VarChar);
             dp.AddParam("@MapelId", model.MapelId, System.Data.SqlDbType.VarChar);
 

@@ -187,6 +187,8 @@
     <None Include="Resources\Ibooks1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\jadwal_waifu2x_photo_noise3_scale-removebg-preview.png" />
+    <None Include="Resources\jadwal_waifu2x_photo_noise3_scale-removebg-preview1.png" />
     <Content Include="ScriptTable\kelas.sql" />
     <Content Include="ScriptTable\Mapel.sql" />
     <Content Include="ScriptTable\Siswa.sql" />

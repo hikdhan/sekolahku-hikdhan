@@ -32,12 +32,12 @@
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
-            this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
-            this.ribbonButton5 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton7 = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -74,9 +74,14 @@
             this.ribbonPanel1.Items.Add(this.ribbonButton1);
             this.ribbonPanel1.Items.Add(this.ribbonButton2);
             this.ribbonPanel1.Items.Add(this.ribbonButton4);
-            this.ribbonPanel1.Items.Add(this.ribbonButton5);
+            this.ribbonPanel1.Items.Add(this.ribbonButton7);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Text = "Master";
+            // 
+            // ribbonTab2
+            // 
+            this.ribbonTab2.Name = "ribbonTab2";
+            this.ribbonTab2.Text = null;
             // 
             // ribbonButton3
             // 
@@ -114,17 +119,14 @@
             this.ribbonButton4.Text = "Mapel";
             this.ribbonButton4.Click += new System.EventHandler(this.ribbonButton4_Click);
             // 
-            // ribbonTab2
+            // ribbonButton7
             // 
-            this.ribbonTab2.Name = "ribbonTab2";
-            this.ribbonTab2.Text = null;
-            // 
-            // ribbonButton5
-            // 
-            this.ribbonButton5.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.Image")));
-            this.ribbonButton5.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.LargeImage")));
-            this.ribbonButton5.Name = "ribbonButton5";
-            this.ribbonButton5.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.SmallImage")));
+            this.ribbonButton7.Image = global::sekolahku_jude.Properties.Resources.Ibooks;
+            this.ribbonButton7.LargeImage = global::sekolahku_jude.Properties.Resources.Ibooks;
+            this.ribbonButton7.Name = "ribbonButton7";
+            this.ribbonButton7.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton7.SmallImage")));
+            this.ribbonButton7.Text = "Jadwal";
+            this.ribbonButton7.Click += new System.EventHandler(this.ribbonButton7_Click);
             // 
             // UtamaForm
             // 
@@ -153,7 +155,7 @@
         private System.Windows.Forms.RibbonButton ribbonButton3;
         
         private System.Windows.Forms.RibbonButton ribbonButton4;
-        private System.Windows.Forms.RibbonButton ribbonButton5;
+        private System.Windows.Forms.RibbonButton ribbonButton7;
     }
 }
 

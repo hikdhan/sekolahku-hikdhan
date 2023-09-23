@@ -34,11 +34,11 @@ namespace sekolahku_jude.Forms
             this.NewButton = new System.Windows.Forms.Button();
             this.JadwalGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.KelasIdText = new System.Windows.Forms.TextBox();
-            this.KelasNameText = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.HariCombo = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.KelasNameText = new System.Windows.Forms.TextBox();
+            this.KelasIdText = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.KelasGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.JadwalGrid)).BeginInit();
             this.panel1.SuspendLayout();
@@ -48,6 +48,7 @@ namespace sekolahku_jude.Forms
             // 
             this.KelasGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.KelasGrid.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.KelasGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.KelasGrid.Location = new System.Drawing.Point(12, 12);
             this.KelasGrid.Name = "KelasGrid";
@@ -59,28 +60,31 @@ namespace sekolahku_jude.Forms
             // SaveButton
             // 
             this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.SaveButton.BackColor = System.Drawing.Color.Cyan;
             this.SaveButton.Location = new System.Drawing.Point(818, 602);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(103, 54);
             this.SaveButton.TabIndex = 1;
             this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.UseVisualStyleBackColor = false;
             // 
             // NewButton
             // 
             this.NewButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.NewButton.BackColor = System.Drawing.Color.Cyan;
             this.NewButton.Location = new System.Drawing.Point(317, 602);
             this.NewButton.Name = "NewButton";
             this.NewButton.Size = new System.Drawing.Size(103, 54);
             this.NewButton.TabIndex = 2;
             this.NewButton.Text = "New";
-            this.NewButton.UseVisualStyleBackColor = true;
+            this.NewButton.UseVisualStyleBackColor = false;
             // 
             // JadwalGrid
             // 
             this.JadwalGrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.JadwalGrid.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.JadwalGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.JadwalGrid.Location = new System.Drawing.Point(317, 301);
             this.JadwalGrid.Name = "JadwalGrid";
@@ -93,6 +97,7 @@ namespace sekolahku_jude.Forms
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel1.Controls.Add(this.HariCombo);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.KelasNameText);
@@ -103,30 +108,15 @@ namespace sekolahku_jude.Forms
             this.panel1.Size = new System.Drawing.Size(604, 283);
             this.panel1.TabIndex = 4;
             // 
-            // label1
+            // HariCombo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Kelas ID";
-            // 
-            // KelasIdText
-            // 
-            this.KelasIdText.Location = new System.Drawing.Point(78, 41);
-            this.KelasIdText.Name = "KelasIdText";
-            this.KelasIdText.ReadOnly = true;
-            this.KelasIdText.Size = new System.Drawing.Size(47, 26);
-            this.KelasIdText.TabIndex = 5;
-            // 
-            // KelasNameText
-            // 
-            this.KelasNameText.Location = new System.Drawing.Point(78, 73);
-            this.KelasNameText.Name = "KelasNameText";
-            this.KelasNameText.ReadOnly = true;
-            this.KelasNameText.Size = new System.Drawing.Size(121, 26);
-            this.KelasNameText.TabIndex = 6;
+            this.HariCombo.BackColor = System.Drawing.Color.Aqua;
+            this.HariCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.HariCombo.FormattingEnabled = true;
+            this.HariCombo.Location = new System.Drawing.Point(78, 105);
+            this.HariCombo.Name = "HariCombo";
+            this.HariCombo.Size = new System.Drawing.Size(121, 28);
+            this.HariCombo.TabIndex = 8;
             // 
             // label2
             // 
@@ -137,19 +127,36 @@ namespace sekolahku_jude.Forms
             this.label2.TabIndex = 7;
             this.label2.Text = "Hari";
             // 
-            // HariCombo
+            // KelasNameText
             // 
-            this.HariCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.HariCombo.FormattingEnabled = true;
-            this.HariCombo.Location = new System.Drawing.Point(78, 105);
-            this.HariCombo.Name = "HariCombo";
-            this.HariCombo.Size = new System.Drawing.Size(121, 28);
-            this.HariCombo.TabIndex = 8;
+            this.KelasNameText.Location = new System.Drawing.Point(78, 73);
+            this.KelasNameText.Name = "KelasNameText";
+            this.KelasNameText.ReadOnly = true;
+            this.KelasNameText.Size = new System.Drawing.Size(121, 26);
+            this.KelasNameText.TabIndex = 6;
+            // 
+            // KelasIdText
+            // 
+            this.KelasIdText.Location = new System.Drawing.Point(78, 41);
+            this.KelasIdText.Name = "KelasIdText";
+            this.KelasIdText.ReadOnly = true;
+            this.KelasIdText.Size = new System.Drawing.Size(47, 26);
+            this.KelasIdText.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Kelas ID";
             // 
             // JadwalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Blue;
             this.ClientSize = new System.Drawing.Size(933, 668);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.JadwalGrid);
