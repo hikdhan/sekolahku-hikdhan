@@ -120,6 +120,7 @@
     <Compile Include="Model\JadwalModel.cs" />
     <Compile Include="Model\KelasModel.cs" />
     <Compile Include="Model\MapelModel.cs" />
+    <Compile Include="Model\NilaiModel.cs" />
     <Compile Include="Model\SiswaModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
